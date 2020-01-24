@@ -7,6 +7,12 @@ def sumaComplejos(num1, num2):
     return com1,com2
 
 
+def restaComplejos(num1, num2):
+    com1 = num1[0] - num2[0]
+    com2 = num1[1] - num2[1]
+    return com1,com2
+
+
 def sumaVectores(vec1, vec2):
     res = [0] * len(vec1)
     if len(vec1) != len(vec2):
