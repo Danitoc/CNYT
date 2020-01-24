@@ -13,6 +13,16 @@ def restaComplejos(num1, num2):
     return com1,com2
 
 
+def multiplicacionComplejos(num1, num2):
+    val1 = num1[0] * num2[0]
+    val2 = num1[0] * num2[1]
+    val3 = num1[1] * num2[0]
+    val4 = num1[1] * num2[1]
+    res1 = val1 + val4 * -1
+    res2 = val2 + val3
+    return res1,res2
+
+
 def sumaVectores(vec1, vec2):
     res = [0] * len(vec1)
     if len(vec1) != len(vec2):
