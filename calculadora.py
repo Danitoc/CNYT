@@ -1,4 +1,4 @@
-from sys import stdin
+import math
 
 
 def sumaComplejos(num1, num2):
@@ -23,6 +23,21 @@ def multiplicacionComplejos(num1, num2):
     return res1,res2
 
 
+#def division():
+
+
+#def modulo():
+
+
+#def conjugado():
+
+
+#def cart_pola():
+
+
+#def fase():
+
+
 def sumaVectores(vec1, vec2):
     res = [0] * len(vec1)
     if len(vec1) != len(vec2):
@@ -39,14 +54,34 @@ def invertirSignos(com):
     return pos1,pos2
 
 
-def inverso(vector):
-    
+def prodTensorVect(vec1, vec2):
+    res = []
+    for i in range(len(vec1)):
+        for j in range(len(vec2)):
+            res.append(multiplicacionComplejos(vec1[i], vec2[j]))
+    return res
+
+
+def prodTensorMatr(mat1, mat2):
+    tens = []
+    for i in range(len(mat1)):
+        for j in range(len(mat2)):
+            tens.append(prodTensorVect(mat1[i], mat2[j]))
+    return tens
 
 
 def main():
-    vector1 = [(2,3), (3,4), (4,5)]
-    vector2 = [(6,7), (5,2), (3,1)]
-    suma = sumaVectores(vector1, vector2)
-    print(suma)
+    vector1 = [(1, 4), (2, 1), (3, 2)]
+    vector2 = [(1, 2), (1, 1)]
+    mat1 = [[(1/math.sqrt(2), 0), (1, 0)], [(1, 0), (0, 0)]]
+    mat2 = [[(3, 0), (4, 0)], [(2, 0), (1, 0)]]
+    #suma = sumaVectores(vector1, vector2)
+    producTensor = prodTensorVect(vector1, vector2)
+    producTensorMat = prodTensorMatr(mat1, mat2)
+    #print(suma)
+    print(producTensor)
+    for i in producTensorMat:
+        print(i)
+
 
 main()
