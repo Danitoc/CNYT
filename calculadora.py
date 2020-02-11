@@ -26,7 +26,7 @@ def multiplicacionComplejos(num1, num2):
 def division(num1, num2):
     dato1 = multiplicacionComplejos(num1, conjugado(num2))
     dato2 = complejoPorConjugado(num2)
-    res = dato1[0]/dato2, dato1[1]/dato2
+    res = dato1[0] / dato2, dato1[1] / dato2
     return res
 
 
@@ -61,7 +61,9 @@ def pola_cart(num):
     return res
 
 
-# def fase():
+def fase(num):
+    res = math.atan2(num[1], num[0])
+    return res
 
 
 def radianesGrados(num):
@@ -70,6 +72,9 @@ def radianesGrados(num):
 
 def gradosRadianes(num):
     return (num * 180) / math.pi
+
+
+"""            Operaciones de vetores y matrices            """
 
 
 def sumaVectores(vec1, vec2):
@@ -117,7 +122,7 @@ def main():
     # print(suma)
     #print(producTensor)
     #for i in producTensorMat:
-    #    print(i)
+    #print(i)
     #mod = modulo(numero1)
     #mod2 = modulo(nuemro2)
     #print(mod)
@@ -128,10 +133,10 @@ def main():
     #print(comConj)
     #div = division(numero1, numero2)
     #print(div)
-    cartApolar = cart_pola(numero1)
-    print(cartApolar)
-    porlAcart = pola_cart(cartApolar)
-    print(porlAcart)
+    #cartApolar = cart_pola(numero1)
+    #print(cartApolar)
+    #porlAcart = pola_cart(cartApolar)
+    #print(porlAcart)
 
 
 main()
