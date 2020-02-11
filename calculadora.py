@@ -87,10 +87,33 @@ def sumaVectores(vec1, vec2):
         return res
 
 
-def invertirSignos(com):
-    pos1 = com[0] * - 1
-    pos2 = com[1] * - 1
-    return pos1, pos2
+def inversoAditivo(vec):
+    for i in range(len(vec)):
+        vec[i] = invertirSignos(vec[i])
+    return vec
+
+
+def escalarPorVector(num, vec):
+    res = []
+    for i in range(len(vec)):
+        res.append(multiplicacionComplejos(num, vec[i]))
+    return res
+
+
+def sumaMatrices(mat1, mat2):
+    res = [0] * len(mat1)
+    if len(mat1) != len(mat2):
+        print('No se pueden sumar las matrices')
+    for i in range(len(mat1)):
+        res[i] = sumaVectores(mat1[i], mat2[i])
+    return res
+
+
+def inversaAditivaMatriz(mat):
+    res = [0] * len(mat)
+    for i in range(len(mat)):
+        res[i] = inversoAditivo(mat[i])
+    return res
 
 
 def prodTensorVect(vec1, vec2):
@@ -109,17 +132,25 @@ def prodTensorMatr(mat1, mat2):
     return tens
 
 
+def invertirSignos(com):
+    pos1 = com[0] * - 1
+    pos2 = com[1] * - 1
+    return pos1, pos2
+
+
 def main():
-    numero1 = (1, 1)
-    numero2 = (8, -2)
-    vector1 = [(1, 4), (2, 1), (3, 2)]
+    numero1 = (3, 2)
+    numero2 = (6, 3)
+    vector1 = [(6, 3), (0, 0), (5, 1), (4, 0)]
     vector2 = [(1, 2), (1, 1)]
-    mat1 = [[(1 / math.sqrt(2), 0), (1, 0)], [(1, 0), (0, 0)]]
+    mat1 = [[(1, 0), (1, 0)], [(1, 0), (0, 0)]]
     mat2 = [[(3, 0), (4, 0)], [(2, 0), (1, 0)]]
-    # suma = sumaVectores(vector1, vector2)
+    #multcomple = multiplicacionComplejos(numero1, numero2)
+    #print(multcomple)
+    #suma = sumaVectores(vector1, vector2)
     #producTensor = prodTensorVect(vector1, vector2)
     #producTensorMat = prodTensorMatr(mat1, mat2)
-    # print(suma)
+    #print(suma)
     #print(producTensor)
     #for i in producTensorMat:
     #print(i)
@@ -137,6 +168,23 @@ def main():
     #print(cartApolar)
     #porlAcart = pola_cart(cartApolar)
     #print(porlAcart)
+    #inver = inversoAditivo(vector1)
+    #print(inver)
+    #escalaVector = escalarPorVector(numero1, vector1)
+    #print(escalaVector)
+    """for i in range(len(mat1)):
+        print(mat1[i])
+    print()
+    for i in range(len(mat2)):
+        print(mat2[i])
+    print()
+    sumMat = sumaMatrices(mat1, mat2)
+    for i in range(len(sumMat)):
+        print(sumMat[i])
+    print()
+    invMat = inversaAditivaMatriz(sumMat)
+    for i in range(len(invMat)):
+        print(invMat[i])"""
 
 
 main()
