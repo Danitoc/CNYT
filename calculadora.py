@@ -138,10 +138,18 @@ def invertirSignos(com):
     return pos1, pos2
 
 
+def probabilidad(pos, vec):
+    num = modulo(vec[pos]) ** 2
+    total = 0
+    for i in range(len(vec)):
+        total += modulo(vec[i]) ** 2
+    return (num/total) * 100
+
+
 def main():
     numero1 = (3, 2)
     numero2 = (6, 3)
-    vector1 = [(6, 3), (0, 0), (5, 1), (4, 0)]
+    vector1 = [(2, 1), (-1, 2), (0, 1), (1, 0), (3, -1), (2, 0), (0, -2), (-2, 1), (1, -3), (0, -1)]
     vector2 = [(1, 2), (1, 1)]
     mat1 = [[(1, 0), (1, 0)], [(1, 0), (0, 0)]]
     mat2 = [[(3, 0), (4, 0)], [(2, 0), (1, 0)]]
@@ -172,6 +180,8 @@ def main():
     #print(inver)
     #escalaVector = escalarPorVector(numero1, vector1)
     #print(escalaVector)
+    prob = probabilidad(7, vector1)
+    print(prob)
     """for i in range(len(mat1)):
         print(mat1[i])
     print()
