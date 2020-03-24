@@ -100,6 +100,14 @@ def escalarPorVector(num, vec):
     return res
 
 
+def multiplicaVectores(vec1, vec2):
+    ans = [0] * len(vec1)
+    for i in range(len(vec1)):
+        ans[i] = multiplicacionComplejos(vec1[i], vec2[i])
+    print(ans)
+
+
+
 def sumaMatrices(mat1, mat2):
     res = [0] * len(mat1)
     if len(mat1) != len(mat2):
@@ -149,7 +157,7 @@ def probabilidad(pos, vec):
 def main():
     numero1 = (3, 2)
     numero2 = (6, 3)
-    vector1 = [(2, 1), (-1, 2), (0, 1), (1, 0), (3, -1), (2, 0), (0, -2), (-2, 1), (1, -3), (0, -1)]
+    vector1 = [(2, 1), (-1, 2)]
     vector2 = [(1, 2), (1, 1)]
     mat1 = [[(1, 0), (1, 0)], [(1, 0), (0, 0)]]
     mat2 = [[(3, 0), (4, 0)], [(2, 0), (1, 0)]]
@@ -180,8 +188,9 @@ def main():
     #print(inver)
     #escalaVector = escalarPorVector(numero1, vector1)
     #print(escalaVector)
-    prob = probabilidad(7, vector1)
-    print(prob)
+    #prob = probabilidad(7, vector1)
+    #print(prob)
+    multiplicaVectores(vector1, vector2)
     """for i in range(len(mat1)):
         print(mat1[i])
     print()
